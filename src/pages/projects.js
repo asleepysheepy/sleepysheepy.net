@@ -5,6 +5,7 @@ import React from 'react'
 import Recase from 'better-recase'
 import fetch from 'isomorphic-unfetch'
 import { StyleSheet } from 'src/utils/styles'
+import { themeForSeason } from 'src/utils/theme'
 
 const projectsUrl = 'https://api.github.com/users/asleepysheepy/repos?sort=pushed&type=all'
 
@@ -50,6 +51,7 @@ ProjectsPage.propTypes = {
   projects: PropTypes.array,
 }
 
+const theme = themeForSeason()
 const styles = StyleSheet.create({
   container: {
     margin: '1.5rem 2.5rem',
@@ -58,7 +60,7 @@ const styles = StyleSheet.create({
     listStyle: 'none',
     padding: 0,
     'li': {
-      borderBottom: '1px solid #85C1E5',
+      borderBottom: `1px solid ${theme.colors.primary}`,
     },
     'li:last-of-type': {
       border: 'none',

@@ -1,5 +1,6 @@
 import React from 'react'
 import { StyleSheet } from 'src/utils/styles'
+import { themeForSeason } from 'src/utils/theme'
 
 export default function Footer() {
   const date = new Date().getFullYear()
@@ -12,13 +13,14 @@ export default function Footer() {
   )
 }
 
+const theme = themeForSeason()
 const styles = StyleSheet.create({
   footer: {
     flexShrink: 0,
     display: 'flex',
     alignItems: 'center',
     flexDirection: 'column',
-    borderTop: '1px solid #85C1E5',
+    borderTop: `1px solid ${theme.colors.primary}`,
     margin: '0.5rem 0',
     padding: '0.5rem',
   },

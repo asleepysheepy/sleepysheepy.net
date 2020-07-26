@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 import { StyleSheet } from 'src/utils/styles'
+import { themeForSeason } from 'src/utils/theme'
 
 export default function Navbar() {
   return (
@@ -11,6 +12,7 @@ export default function Navbar() {
   )
 }
 
+const theme = themeForSeason()
 const styles = StyleSheet.create({
   navbar: {
     margin: '2rem 2rem 0',
@@ -21,6 +23,6 @@ const styles = StyleSheet.create({
     textDecoration: 'none',
     margin: '0 0.5rem',
     fontSize: '1.125rem',
-    color: '#5584B1',
+    color: theme.colors.primary,
   },
 })

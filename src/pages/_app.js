@@ -1,30 +1,47 @@
 import Footer from 'src/components/layout/footer'
+import Head from 'next/head'
 import Navbar from 'src/components/layout/navbar'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { Global, StyleSheet } from 'src/utils/styles'
+import { themeForSeason } from 'src/utils/theme'
+
+import { config } from '@fortawesome/fontawesome-svg-core'
+import '@fortawesome/fontawesome-svg-core/styles.css'
+config.autoAddCss = false
+
+const theme = themeForSeason()
 
 export default function App({ Component, pageProps }) {
   return (
-    <div css={styles.appContainer}>
-      <Global styles={styles} />
-      <Navbar />
-      <Component {...pageProps} />
-      <Footer />
-    </div>
+    <>
+      <Head>
+        <link
+          href={theme.favicon}
+          rel={'icon'}
+          type={'image/png'}
+        />
+      </Head>
+      <div css={styles.appContainer}>
+        <Global styles={styles} />
+        <Navbar />
+        <Component {...pageProps} />
+        <Footer />
+      </div>
+    </>
   )
 }
 
 const styles = StyleSheet.create({
   body: {
-    backgroundColor: '#F8F3EA',
-    color: '#254E7B',
+    backgroundColor: theme.colors.background,
+    color: theme.colors.foreground,
     fontFamily: 'sans-serif',
     margin: 'auto',
     maxWidth: '50em',
   },
   a: {
-    color: '#5584B1',
+    color: theme.colors.primary,
   },
   appContainer: {
     display: 'flex',

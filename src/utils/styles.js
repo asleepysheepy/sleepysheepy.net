@@ -1,6 +1,6 @@
 import { Global, css as emotionCss } from '@emotion/core'
 
-const emotionCreate = {
+const StyleSheet = {
   create(styles) {
     return Object.keys(styles).reduce((obj, key) => {
       if (typeof styles[key] === 'object') {
@@ -16,7 +16,5 @@ const emotionCreate = {
     }, {})
   },
 }
-
-const StyleSheet = emotionCreate
 
 export { Global, StyleSheet }

@@ -3,6 +3,7 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { StyleSheet } from 'src/utils/styles'
 import { faGithub, faKeybase, faReddit, faSteam, faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { themeForSeason } from 'src/utils/theme'
 
 const socialMedias = [
   {
@@ -32,6 +33,8 @@ const socialMedias = [
   },
 ]
 
+const theme = themeForSeason()
+
 export default function IndexPage() {
   return (
     <>
@@ -43,11 +46,12 @@ export default function IndexPage() {
           <img
             alt={'Avatar of Katie'}
             css={styles.avatarImg}
-            src={'https://avatars1.githubusercontent.com/u/12132647?s=460&v=4'}
+            src={theme.avatar}
           />
           <h1 css={styles.title}>Katie Macke</h1>
-          <h2 css={styles.subtitle}>Software Engineer</h2>
-          <p css={styles.socialIcons}>
+          <h2 css={styles.subtitle}> A sleepy sheepy</h2>
+          <h3 css={styles.subSubtitle}>Software Engineer</h3>
+          <div css={styles.socialIcons}>
             {socialMedias.map(({icon, name, url}) => (
               <a
                 css={styles.socialIcon}
@@ -58,7 +62,7 @@ export default function IndexPage() {
                 <span css={styles.srOnly}>{`A link to my ${name} account`}</span>
               </a>
             ))}
-          </p>
+          </div>
         </section>
         <section css={styles.column}>
           <p>
@@ -98,7 +102,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
   },
   avatarImg: {
-    border: '5px solid #85C1E5',
+    border: `5px solid ${theme.colors.primary}`,
     width: '13rem',
   },
   title: {
@@ -109,12 +113,19 @@ const styles = StyleSheet.create({
     fontSize: '1.5rem',
     margin: '.25rem 0',
   },
+  subSubtitle: {
+    fontSize: '1.125rem',
+    margin: '.25rem 0',
+  },
   socialIcons: {
+    display: 'flex',
+    flexDirection: 'row',
     margin: 0,
+    marginTop: '.5rem',
   },
   socialIcon: {
     margin: '.25rem',
-    fontSize: '1.55rem',
+    fontSize: '1.5rem',
   },
   srOnly: {
     border: 0,

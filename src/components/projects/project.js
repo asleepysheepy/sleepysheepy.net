@@ -3,6 +3,7 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { StyleSheet } from 'src/utils/styles'
 import { faCodeBranch, faEye, faStar } from '@fortawesome/free-solid-svg-icons'
+import { themeForSeason } from 'src/utils/theme'
 
 function classNameForLanguage(language) {
   switch (language) {
@@ -50,6 +51,7 @@ Project.propTypes = {
   }).isRequired,
 }
 
+const theme = themeForSeason()
 const styles = StyleSheet.create({
   githubStyles: {
     'span': {
@@ -60,7 +62,7 @@ const styles = StyleSheet.create({
     height: '.75em',
     width: '.75em',
     borderRadius: '50%',
-    border: '.1em solid #aaaaaa',
+    border: `.1em solid ${theme.colors.secondary}`,
     display: 'inline-block',
     marginLeft: '.25em',
   },
