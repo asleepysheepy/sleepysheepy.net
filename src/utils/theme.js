@@ -5,7 +5,7 @@ const colors = {
     primary: '#51C575',
   },
   summer: {
-    background: '#FFF180',
+    background: '#FFF5AD',
     primary: '#E7B500',
   },
   winter: {},
