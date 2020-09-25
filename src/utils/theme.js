@@ -1,5 +1,8 @@
 const colors = {
-  autumn: {},
+  autumn: {
+    background: '#E3A78C',
+    primary: '#B73432',
+  },
   spring: {
     background: '#ECFFDF',
     primary: '#51C575',
@@ -33,8 +36,7 @@ export function themeForSeason() {
   case 8:
   case 9:
   case 10:
-    // return buildSeasonTheme('autumn')
-    return buildSeasonTheme('spring')
+    return buildSeasonTheme('autumn')
   }
 }
 
