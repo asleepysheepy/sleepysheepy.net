@@ -82,31 +82,19 @@ const styles = StyleSheet.create({
 })
 
 const languageStyles = StyleSheet.create({
-  c: {
-    backgroundColor: '#555555',
-  },
   java: {
     backgroundColor: '#b07219',
   },
   javascript: {
     backgroundColor: '#F1E05A',
   },
-  python: {
-    backgroundColor: '#3572A5',
-  },
   ruby: {
     backgroundColor: '#701516',
   },
-  shell: {
-    backgroundColor: '#89E051',
-  },
-  swift: {
-    backgroundColor: '#ffac45',
+  typescript: {
+    backgroundColor: '#2b7489',
   },
   vim: {
     backgroundColor: '#199f4b',
-  },
-  vue: {
-    backgroundColor: '#2C3E50',
   },
 })
