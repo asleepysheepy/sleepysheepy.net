@@ -11,7 +11,10 @@ const colors = {
     background: '#FFF5AD',
     primary: '#E7B500',
   },
-  winter: {},
+  winter: {
+    background: '#E3F5FF',
+    primary: '#3F9CDF',
+  },
   base: {
     foreground: '#000',
     secondary: '#DCD7C9',
@@ -23,8 +26,7 @@ export function themeForSeason() {
   case 11:
   case 0:
   case 1:
-    // return buildSeasonTheme('winter')
-    return buildSeasonTheme('spring')
+    return buildSeasonTheme('winter')
   case 2:
   case 3:
   case 4:
